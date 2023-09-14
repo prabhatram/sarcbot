@@ -1,0 +1,52 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says 'No' to anything_else utterance
+  steps:
+  - intent: deny
+  - action: utter_goodbye
+
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: Simple Fallback - WORKS
+#   steps:
+#   - intent: nlu_fallback
+#   - action: action_default_fallback
+
+- rule: Single stage fallback | ask user what they meant
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_ask_affirmation
+
+- rule: Single stage fallback | call default fallback if user is not OK with the given options
+  steps:
+  - action: action_default_ask_affirmation
+  - intent: out_of_scope
+  - action: action_default_fallback
+
+
+- rule: Activate form
+  steps:
+  - intent: my_order
+  - action: validate_simple_order_form
+  - active_loop: validate_simple_order_form
+
+- rule: submit form
+  condition:
+  - active_loop: validate_simple_order_form
+  steps:
+  - action: validate_simple_order_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_order_valid
+  - action: query_order_details
+  - action: action_reset_order_number
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye

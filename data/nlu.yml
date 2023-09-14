@@ -1,0 +1,101 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nothing
+- intent: tell_me_a_joke
+  examples: |
+    - tell me a joke, please
+    - tell me joke
+    - give me a joke
+    - Can you tell me a joke?
+    - I'd like to hear a joke
+    - joke, please
+    - entertain me
+    - three
+    - tell a joke
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: my_order
+  examples: |
+    - I want to know about my order
+    - I want to know about my order [O123](order_number)
+    - track my order [O675](order_number)
+    - want to know about order [O876](order_number)
+    - want to know about order
+    - Where is my order?
+    - where's my order
+    - about my order
+    - tell me about my order
+    - what's up with my order
+    - what's happening with my order
+    - track my order
+    - track order
+    - order
+- intent: order_details
+  examples: |
+    - My order number is [O123](order_number)
+    - Here's my order number [O456](order_number)
+    - [O765](order_number)
+    - Order number is [O332](order_number)
+    - Order number is [O435](order_number)
+    - Here is the order number [O465](order_number)
+    - [O123](order_number)
+    - [O234](order_number)
+    - [O123](order_number)
+    - [O245](order_number)
+    - My order id is [O123](order_id)
+    - Here's my order id [O456](order_id)
+    - order id is [O123](order_id)
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+# - intent: out_of_scope
+#   examples: |
+#     - What is the weather like in Australia?
+#     - Can you fly?
+#     - I love you.
+#     - What is your favourite movie?
+#     - Do you like Titanic?
+#     - FUBAR

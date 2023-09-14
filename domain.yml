@@ -1,0 +1,90 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- my_order
+- order_details
+- tell_me_a_joke
+- out_of_scope
+entities:
+- order_number
+- order_id
+slots:
+  order_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order_number
+      # conditions:
+      # - active_loop: order_number_form
+  order_id:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order_id
+      # conditions:
+      # - active_loop: order_number_form
+forms:
+  order_number_form:
+    required_slots:
+    - order_number
+    - order_id
+actions:
+- action_reset_order_number
+- utter_greet
+- utter_goodbye
+- utter_give_options
+- utter_order_valid
+- utter_anything_else
+- query_order_details
+- utter_ask_order_number
+- utter_ask_order_id
+- validate_simple_order_form
+# - validate_order_number_form
+- action_default_fallback
+- action_default_ask_affirmation
+responses:
+  utter_greet:
+  - text: Hey, there. What would you like to bother me with?
+  - text: What now?
+  utter_goodbye:
+  - text: 'In that case, thank you for wasting my time. Goodbye '
+  - text: Oh, I thought you would never leave.
+  utter_give_options:
+  - text: |-
+      Here are your options. 
+       	 1. Provide company information. 
+       	 2. Track Order. 
+       	 3. Entertain you. 
+       So, what is it going to be, Your Highness?
+  utter_joke:
+  - text: 'Here’s a joke for you: Look in the mirror '
+    image: https://media.giphy.com/media/BFYLNwlsSNtcc/giphy.gif?cid=ecf05e47tl1wa16rrmdk4hlqhc84h5mfjsu8bn8a77q7t0g9&rid=giphy.gif&ct=g
+  utter_anything_else:
+  - text: What else can I do for you, Your Highness?
+  utter_order_valid:
+  - text: I'm impressed!!! Good job at providing the right-length order number!
+  utter_track_order: 
+  - text: Would you take the trouble of providing me your order number?
+  utter_ask_order_number:
+  - text: Would you take the trouble of providing me your order number?
+  utter_ask_order_id:
+  - text: Good boy. Now provide me your order ID?
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  # utter_out_of_scope:
+  # - text: Sorry, I don't speak your language. Try again.
+  # utter_please_rephrase:
+  # - text: Sorry, no understand. Rephrase so that even a 5 year old can understand.
+  utter_default:
+  - text: Sorry, no understand. Rephrase so that even a 5 year old can understand.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
