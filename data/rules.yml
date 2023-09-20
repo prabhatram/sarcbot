@@ -30,17 +30,17 @@ rules:
   - action: action_default_fallback
 
 
-- rule: Activate form
+- rule: Activate order form
   steps:
   - intent: my_order
-  - action: validate_simple_order_form
-  - active_loop: validate_simple_order_form
+  - action: simple_order_form
+  - active_loop: simple_order_form
 
-- rule: submit form
+- rule: submit order form
   condition:
-  - active_loop: validate_simple_order_form
+  - active_loop: simple_order_form
   steps:
-  - action: validate_simple_order_form
+  - action: simple_order_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null

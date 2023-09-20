@@ -32,7 +32,7 @@ slots:
       # conditions:
       # - active_loop: order_number_form
 forms:
-  order_number_form:
+  simple_order_form:
     required_slots:
     - order_number
     - order_id

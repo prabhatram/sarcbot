@@ -84,6 +84,7 @@ nlu:
     - My order id is [O123](order_id)
     - Here's my order id [O456](order_id)
     - order id is [O123](order_id)
+    - ID [O987](order_id)
 
 - intent: bot_challenge
   examples: |
