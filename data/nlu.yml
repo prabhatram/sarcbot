@@ -3,7 +3,7 @@ nlu:
 - intent: greet
   examples: |
     - hey
-    - hello
+    - Hello
     - hi
     - hello there
     - good morning
