@@ -142,30 +142,6 @@ class ValidateSimpleOrderForm(FormValidationAction):
         
         return {"order_number": order}
     
-    # def validate_order_id(
-    #     self,
-    #     slot_value: Any,
-    #     dispatcher: CollectingDispatcher,
-    #     tracker: Tracker,
-    #     domain: DomainDict,
-    # ) -> Dict[Text, Any]:
-        
-        
-    #     # If the name is super short, it might be wrong.
-    #     id = slot_value
-    #     print(f"Order ID = {id} length = {len(id)}")
-    #     if len(id) == 0:
-    #         dispatcher.utter_message(text="Shouldn't your order ID be made of actual order number?")
-    #         return {"order_id": None}
-    #     elif len(id) < 4:
-    #         dispatcher.utter_message(text="That order ID is way too short. How about you provide me a 4-character order ID?")
-    #         return {"order_id": None}
-    #     elif len(id) > 4:
-    #         dispatcher.utter_message(text="That order ID is way too long. How about you provide me a 4-character order ID?")
-    #         return {"order_id": None}
-        
-    #     return {"order_id": id}
-        #return f"Good job at providing a proper order number {(order)}."
 
 class QueryOrderDetails(Action):
 
