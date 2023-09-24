@@ -14,54 +14,54 @@ stories:
     - intent: goodbye
   - action: utter_goodbye
 
-# - story: interactive_story_1_for_track_order
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - action: utter_give_options
-#   - intent: my_order
-#   - action: order_number_form
-#   - active_loop: order_number_form
-#   - slot_was_set:
-#     - requested_slot: order_number
-#   - intent: order_details
-#     entities:
-#     - order_number: O123
-#   - slot_was_set:
-#     - order_number: O123
-#   - action: order_number_form
-#   - slot_was_set:
-#     - order_number: O123
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_order_valid
-#   - action: query_order_details
-#   - action: action_reset_order_number
-#   - slot_was_set:
-#     - order_number: null
-#   - action: utter_anything_else
-#   - intent: my_order
-#   - action: order_number_form
-#   - active_loop: order_number_form
-#   - slot_was_set:
-#     - requested_slot: order_number
-#   - intent: order_details
-#     entities:
-#     - order_number: O245
-#   - slot_was_set:
-#     - order_number: O245
-#   - action: order_number_form
-#   - slot_was_set:
-#     - order_number: O245
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_order_valid
-#   - action: query_order_details
-#   - action: action_reset_order_number
-#   - slot_was_set:
-#     - order_number: null
-#   - action: utter_anything_else
-#   - intent: deny
-#   - action: utter_goodbye
+- story: interactive_story_1_for_track_order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_give_options
+  - intent: my_order
+  - action: order_number_form
+  - active_loop: order_number_form
+  - slot_was_set:
+    - requested_slot: order_number
+  - intent: order_details
+    entities:
+    - order_number: O123
+  - slot_was_set:
+    - order_number: O123
+  - action: order_number_form
+  - slot_was_set:
+    - order_number: O123
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_order_valid
+  - action: query_order_details
+  - action: action_reset_order_number
+  - slot_was_set:
+    - order_number: null
+  - action: utter_anything_else
+  - intent: my_order
+  - action: order_number_form
+  - active_loop: order_number_form
+  - slot_was_set:
+    - requested_slot: order_number
+  - intent: order_details
+    entities:
+    - order_number: O245
+  - slot_was_set:
+    - order_number: O245
+  - action: order_number_form
+  - slot_was_set:
+    - order_number: O245
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_order_valid
+  - action: query_order_details
+  - action: action_reset_order_number
+  - slot_was_set:
+    - order_number: null
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
