@@ -13,7 +13,7 @@ intents:
 - out_of_scope
 entities:
 - order_number
-- order_id
+# - order_id
 slots:
   order_number:
     type: text
@@ -35,7 +35,7 @@ forms:
   simple_order_form:
     required_slots:
     - order_number
-    - order_id
+    # - order_id
 actions:
 - action_reset_order_number
 - utter_greet
@@ -45,7 +45,7 @@ actions:
 - utter_anything_else
 - query_order_details
 - utter_ask_order_number
-- utter_ask_order_id
+# - utter_ask_order_id
 - validate_simple_order_form
 # - validate_order_number_form
 - action_default_fallback
@@ -58,12 +58,12 @@ responses:
   - text: 'In that case, thank you for wasting my time. Goodbye '
   - text: Oh, I thought you would never leave.
   utter_give_options:
-  - text: |-
+  - text: |
       Here are your options. 
        	 1. Provide company information. 
-       	 2. Track Order. 
-       	 3. Entertain you. 
-       So, what is it going to be, Your Highness?
+       	 2. Track Order.
+       	 3. Entertain you.
+       So, what is it going to be, Your Highness? 
   utter_joke:
   - text: 'Here’s a joke for you: Look in the mirror '
     image: https://media.giphy.com/media/BFYLNwlsSNtcc/giphy.gif?cid=ecf05e47tl1wa16rrmdk4hlqhc84h5mfjsu8bn8a77q7t0g9&rid=giphy.gif&ct=g
@@ -75,8 +75,8 @@ responses:
   - text: Would you take the trouble of providing me your order number?
   utter_ask_order_number:
   - text: Would you take the trouble of providing me your order number?
-  utter_ask_order_id:
-  - text: Good boy. Now provide me your order ID?
+  # utter_ask_order_id:
+  # - text: Good boy. Now provide me your order ID?
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   # utter_out_of_scope:
